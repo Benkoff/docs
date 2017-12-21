@@ -150,12 +150,12 @@ programs are <strong>broken</strong> and they must be <strong>fixed</strong>.</p
 <h2 id="s3-source-file-structure">3 Source file structure</h2>
 
 <div>
-<p>A source file consists of, <strong>in order (IntelliJ IDEA default)</strong>:</p>
+<p>A source file consists of, <strong>in order</strong>:</p>
 
 <ol>
+  <li>License or copyright information, if present</li>
   <li>Package statement</li>
   <li>Import statements</li>
-  <li>License or copyright information, if present</li>
   <li>Exactly one top-level class</li>
 </ol>
 </div>
@@ -176,7 +176,7 @@ programs are <strong>broken</strong> and they must be <strong>fixed</strong>.</p
 <a name="imports"></a>
 <h3 id="s3.3-import-statements">3.3 Import statements</h3>
 
-<h4 id="s3.3.1-wildcard-imports">3.3.1 No wildcard imports (<strong>IntelliJ IDEA Settings → Editor → Code Style → Java → Imports → Class count to use... → any big number</strong>)</h4>
+<h4 id="s3.3.1-wildcard-imports">3.3.1 No wildcard imports (use <strong>IntelliJ IDEA Settings → Editor → Code Style → Java → Imports → Class count to use... → any big number</strong>)</h4>
 
 <p><strong>Wildcard imports</strong>, static or otherwise, <strong>are not used</strong>.</p>
 
@@ -229,10 +229,8 @@ maintainer could explain if asked. For example, new methods are not just habitua
 of the class, as that would yield "chronological by date added" ordering, which is not a logical
 ordering.</p>
 
-
-
 <a name="overloads"></a>
-<h5 id="s3.4.2.1-overloads-never-split">3.4.2.1 Overloads: never split</h5>
+<h4 id="s3.4.2.1-overloads-never-split">3.4.2.1 Overloads: never split</h4>
 
 <p>When a class has multiple constructors, or multiple methods with the same name, these appear
 sequentially, with no other code in between (not even private members).</p>
@@ -1186,6 +1184,36 @@ class or member, that comment is written as Javadoc instead (using <code>/**</co
 <p>Non-required Javadoc is not strictly required to follow the formatting rules of Sections
 7.1.2, 7.1.3, and 7.2, though it is of course recommended.</p>
 
+<a name="authors"></a>
+<h4 id="s7.3.5-author-tag-before-annotation">7.3.5 Code authors and major contributors</h4>
+
+<p>To mark the names of the person who created the class or major contributors Javadoc 
+@Author tag or equivalent constructions are used. The text enclosed as a Javadoc multi-line 
+comment has to be placed before the class declaration (or annotation, if present), without empty lines 
+between.</p>
+
+<p>Examples:</p>
+
+<pre class="prettyprint lang-java">
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+/**
+ * @Author Basil Pupkin
+ */
+@Configuration
+@EnableSwagger2
+public class SwaggerConfig {
+
+...
+
+import java.util.List;
+
+/**
+ * Created by Thomas A. Anderson on March 31, 1999
+ */
+@SpringBootApplication
+public class Gamification {
+</pre>
  
 
 </div> 
